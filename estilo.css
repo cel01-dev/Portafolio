@@ -167,11 +167,6 @@ p {
   object-fit: cover;
 }
 
-.habilidades-container img.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /*-------------SECCION PROYECTOS-------------*/
 #proyectos{
   width: 100%;
@@ -292,4 +287,18 @@ footer p{
     scroll-snap-align: center;
     margin: 0 15px;
   }
+
+  /*------HABILIDADES------*/
+  .habilidades-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    grid-template-rows: auto; 
+    row-gap: 40px; /* Reducir el espacio vertical */
+    width: 90%;
+    margin: 50px auto; /* Centrar el contenedor */
+  }
+
+  .habilidades-container img {
+    width: 60%; /* Hacerlas más grandes para mejor visibilidad */
+  }
+
 }
