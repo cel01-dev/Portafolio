@@ -131,8 +131,7 @@ p {
   right: 5px;
 }
 .certificados-container {
-  max-width: 860px;
-  width: 100%;
+  width: 860px;
   height: 580px;
   margin: auto;
   overflow: hidden;
@@ -230,6 +229,9 @@ footer p{
 /*------------- MEDIA QUERIES -------------*/
 @media (max-width: 768px) {
   /*------HEADER------*/
+  #header{
+    padding: 20px;
+  }
   .menu-toggle {
     display: block;
   }
@@ -267,25 +269,25 @@ footer p{
   }
 
   /*------CERTIFICADO------*/
-  #certificados::before, #certificados::after{
-    display: block;
-  }
-  .certificados-container{
-    max-width: 100%;
+  .certificados-container {
+    width: 100%; 
     height: auto;
+    overflow-x: scroll; 
+    scrollbar-width: none;
+    display: flex;
+    justify-content: flex-start; 
     padding: 10px;
   }
-  .certificados-wrapper{
-    flex-direction:row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+
+  .certificados-wrapper {
+    flex-wrap: nowrap; /* Evita que los elementos se apilen verticalmente */
+    width: auto; /* Permite que el contenido se ajuste dinámicamente */
   }
-  .certificado{
-    max-width: 80%;
-    height: auto;
-    scroll-snap-align: center;
-    margin: 0 15px;
+
+  .certificado {
+    flex: 0 0 auto; /* No permite que los elementos se reduzcan ni se expandan más de su contenido */
+    width: 80%; /* Escala los certificados para pantallas pequeñas */
+    margin-right: 15px; /* Añade espacio entre los certificados */
   }
 
   /*------HABILIDADES------*/
@@ -299,6 +301,18 @@ footer p{
 
   .habilidades-container img {
     width: 60%; /* Hacerlas más grandes para mejor visibilidad */
+  }
+
+  /*------PROYECTOS------*/
+  .proyectos-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
+    gap: 20px; /* Añadir espacio entre proyectos */
+  }
+
+  .proyecto img {
+    width: 90%; /* Hacer imágenes más grandes */
+    margin: 0 auto; /* Centrar */
+    display: block;
   }
 
 }
